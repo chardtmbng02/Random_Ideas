@@ -14,15 +14,14 @@ router.get("/", async (req, res) => {
 });
 
 //Get Single Idea
-router.get("/:id", (req, res) => {
-  const idea = ideas.find((idea) => idea.id === +req.params.id);
-
-  if (!idea) {
-    return res
-      .status(404)
-      .json({ success: false, error: "Resource not found" });
-  }
-  res.json({ success: true, data: idea });
+  router.get('/:id', async (req, res) => {
+    try {
+      const idea = await Idea.findById(req.params.id);
+      res.json({ success: true, data: idea });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ success: false, error: 'Something Went Wrong' });
+    }
 });
 
 //Add an Idea

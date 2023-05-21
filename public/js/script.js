@@ -11,7 +11,7 @@ function generateQuote() {
   xhr.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       const data = JSON.parse(this.responseText);
-      const quote_id = Math.floor(Math.random() * 11); // generate numbers from 0 to 10
+      const quote_id = Math.floor(Math.random() * 12); // generate numbers from 0 to 10
       love_content.innerHTML = data.data[`${quote_id}`].text;
       love_credits.innerHTML = data.data[`${quote_id}`].tag;
       
@@ -23,4 +23,5 @@ function generateQuote() {
   xhr.send();
 };
 
-document.addEventListener('DOMContentLoaded', generateQuote);
+// This will run automatically when the page load.
+// document.addEventListener('DOMContentLoaded', generateQuote);
