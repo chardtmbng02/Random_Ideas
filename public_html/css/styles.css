@@ -47,6 +47,20 @@ h3 {
   color: #777;
 }
 
+.dashboard {
+  text-align: center;
+  
+}
+
+a{
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover {
+  color: #f17474;
+}
+
 .q-id {
   font-size: 14px;
   text-align: center;

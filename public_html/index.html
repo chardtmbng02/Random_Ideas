@@ -4,17 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   
     <link rel="stylesheet" href="./css/styles.css" />
-    <title>Quotes Generator</title>
+    <title>Murk's Love Quote | Homepage</title>
   </head>
   <body>
-    <div class="container shadow-lg">
-      <h3>Murk's Love Quotes</h3>
-      <div id="love" class="love"></div>
-      <div id="quote-id" class="q-id"></div>
-      <button id="love-btn" class="btn">Generate Quote</button>
-    </div>
-    <script src="./js/script.js"></script>
+    <nav></nav>
+
+    <section>
+      <div class="container shadow-lg">
+        <h3>Murk's Love Quotes</h3>
+        <div id="love" class="love"></div>
+        <div id="quote-id" class="q-id"></div>
+        <button id="love-btn" class="btn" onclick=" fetchQuotes()">
+          Generate Quote
+        </button>
+      </div>
+
+      <div class="dashboard">
+        <span><a href="./admin/admin.html">Admin Panel</a></span>
+      </div>
+    </section>
+
+    <!-- <script src="./js/script-xhr.js"></script> -->
+    <script src="./js/script-axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
