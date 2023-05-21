@@ -23,5 +23,30 @@ function generateQuote() {
   xhr.send();
 };
 
+// Add New Idea
+function AddQuote() {
+  const xhr = new XMLHttpRequest();
+
+  xhr.open('Post', 'http://localhost:5000/api/ideas');
+  xhr.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      const data = JSON.parse(this.responseText);
+      const quote_id = Math.floor(Math.random() * 12); // generate numbers from 0 to 10
+      love_content.innerHTML = data.data[`${quote_id}`].text;
+      love_credits.innerHTML = data.data[`${quote_id}`].tag;
+      
+    } else {
+      love_content.innerHTML = 'We cannot load any love quote at the moment. Be right back!';
+    }
+  };
+
+  xhr.send();
+};
+
 // This will run automatically when the page load.
+
+
+// Fetch Using Axios
+
+
 // document.addEventListener('DOMContentLoaded', generateQuote);
